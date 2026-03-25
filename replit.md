@@ -48,6 +48,20 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Java Package Sorter (`java-sorter/`)
+
+A self-contained Java CLI that implements the Smarter Technology robotic arm package dispatch logic.
+
+- `src/PackageSorter.java` — `sort(width, height, length, mass)` core logic
+- `src/PackageSorterTest.java` — 29 unit tests, zero external dependencies
+- `src/Main.java` — CLI entry point + demo table
+- `run.sh` — compiles, runs tests, then prints demo
+
+Run: `bash java-sorter/run.sh`
+Custom package: `java -cp java-sorter/out Main <w> <h> <l> <mass>`
+
+---
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)
